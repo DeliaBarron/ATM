@@ -1,0 +1,38 @@
+body .background{
+    background-color: black;
+}
+.cuentas{
+border:1px rgb(191, 196, 191) solid;
+}
+.logInRect{
+    border:1px white solid ;
+
+}
+
+ #iniciosesion{
+    background-color: orange;
+    margin:0%
+}
+.form{
+    background-color: orange;
+}
+.logintxt{
+    background-color: rgb(55, 4, 236);
+}
+.imgarea{
+    background-color: white;
+    padding: 12px;
+}
+.col-4{
+    background-color:rgb(55, 4, 236);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+/* .col-9{
+    border: 1px dotted red;
+} */
+
+/* *********+*********+******* */
