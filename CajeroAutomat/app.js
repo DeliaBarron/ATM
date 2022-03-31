@@ -1,50 +1,87 @@
-var cuentas=[
-{
-    nombre:'Delia', 
-    contraseña:'delia123',
-    saldo:2323,
-},
-{ 
-    nombre:'Misato',
-    contraseña:'misato123',
-    saldo:2323,
+var cuentas = [
+    {
+        nombre: 'Delia',
+        contraseña: 'delia123',
+        saldo: 500,
+    },
+    {
+        nombre: 'Misato',
+        contraseña: 'misato123',
+        saldo: 600,
 
-},
-{
-    nombre:'Lucas',
-    contraseña:'lucas123',
-    saldo:2323
-}
+    },
+    {
+        nombre: 'Lucas',
+        contraseña: 'lucas123',
+        saldo: 700
+    }
 ];
 // console.log(cuentas[2].nombre)
 
-//VARIABLES DE BOTON DE CUENTAS
-
-var nombreCuenta=document.querySelector('.nombreCuenta')
-var strNombre=document.getElementById('strNombre')
-
-var placeholder=document.getElementById('nombre')
-// var placeholder=forms.elements['nombre']
 
 
-nombreCuenta.addEventListener('click',()=>{
-    // placeholder.innerHTML=strNombre
-    // placeholder.value=strNombre;
-    placeholder.value='shd'
-
-})
-
-
-
-//CONTRASEÑA VALIDACIÓN
-var inputContraseña=document.querySelector('.contraseña')
-
-function validation(arr){
-    if(inputContraseña=arr.contraseña)
-}
-
-if(strNombre=cuentas[0].nombre){
-    do{
-        
+function LogIn() {
+    var nombre = document.getElementById('nombre').value
+    var contraseña = document.getElementById('contraseña').value
+    for (var i = 0; i < cuentas.lenght; i++) {
+        if (cuentas[i].nombre == nombre && cuentas[i].contraseña == contraseña) {
+             window.location='menu.html'
+        } else {
+            alert('Usuario y/o contraseña incorrectos');
+        }
     }
 }
+
+
+
+
+
+
+
+
+//////MENUS//////////
+
+//SALDO
+
+// var saldo = cuentas[0].saldo
+// document.getElementById('saldotxt').innerHTML = '$' + saldo;
+
+// var saldoMisato=cuentas[1].saldo
+// document.getElementById('saldotxt').innerHTML = '$'+saldoMisato;
+
+// var saldoLucas=cuentas[2].saldo
+// document.getElementById('saldotxt').innerHTML = '$'+saldoLucas;
+
+//OPERACIONES
+var cantRetiro = document.getElementById('cantRetiro')
+var cantDeposito = document.getElementById('cantDeposito')
+
+
+function enterRetiro() {
+    var numRet = Number(cantRetiro.value)
+    if ((saldo - numRet) < 10) {
+        alert('Tu saldo no puede se menor a $10')
+    } else {
+        saldo -= numRet
+        document.getElementById('saldotxt').innerHTML = "$" + '' + saldo;
+    }
+}
+
+
+
+function enterDeposito() {
+    var numRet = Number(cantDeposito.value)
+    saldo += numRet;
+
+    if (saldo > 990) {
+        alert('Tu saldo no puede se mayor a $990')
+        saldo -= numRet
+        return;
+
+    }
+
+    document.getElementById('saldotxt').innerHTML = "$" + '' + saldo;
+
+}
+
+
